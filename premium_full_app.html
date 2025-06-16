@@ -1,0 +1,2904 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helix DriveHub - Premium Full Edition</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="profile_styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header remains constant across all screens -->
+        <header class="header">
+            <div class="app-header">
+                <div class="quick-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-road"></i>
+                        <span class="stat-value">24.8</span>
+                        <span class="stat-unit">km/L</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-gas-pump"></i>
+                        <span class="stat-value">650</span>
+                        <span class="stat-unit">km</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-battery-three-quarters"></i>
+                        <span class="stat-value">85</span>
+                        <span class="stat-unit">%</span>
+                    </div>
+                </div>
+                <div class="ai-status">
+                    <div class="ai-indicator">
+                        <i class="fas fa-brain pulse"></i>
+                    </div>
+                    <span class="ai-text">AI Active</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Home Screen -->
+        <main class="content screen active" id="homeScreen">
+            <!-- Vehicle Status -->
+            <div class="luxury-card">
+                <div class="card-header">
+                    <div class="card-info">
+                        <h3>Vehicle Status</h3>
+                        <p>Helix VEZEL e:HEV Z・2024</p>
+                    </div>
+                    <div class="card-accent"></div>
+                </div>
+                
+                <div class="vehicle-overview">
+                    <div class="status-metric" onclick="showDigitalKey()">
+                        <i class="fas fa-key metric-icon"></i>
+                        <div class="metric-value">Secured</div>
+                        <div class="metric-label">Digital Key</div>
+                        <div class="performance-bar">
+                            <div class="performance-fill" style="width: 100%;"></div>
+                        </div>
+                    </div>
+                    <div class="status-metric" onclick="showHybridManager()">
+                        <i class="fas fa-leaf metric-icon"></i>
+                        <div class="metric-value">24.8</div>
+                        <div class="metric-label">km/L Efficiency</div>
+                        <div class="performance-bar">
+                            <div class="performance-fill" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <div class="status-metric" onclick="showPredictiveHealth()">
+                        <i class="fas fa-heartbeat metric-icon"></i>
+                        <div class="metric-value">Optimal</div>
+                        <div class="metric-label">Health Status</div>
+                        <div class="performance-bar">
+                            <div class="performance-fill" style="width: 95%;"></div>
+                        </div>
+                    </div>
+                    <div class="status-metric">
+                        <i class="fas fa-shield-alt metric-icon"></i>
+                        <div class="metric-value">Active</div>
+                        <div class="metric-label">Security</div>
+                        <div class="performance-bar">
+                            <div class="performance-fill" style="width: 100%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Concierge -->
+            <div class="luxury-card">
+                <div class="card-header">
+                    <div class="card-info">
+                        <h3>AI Concierge</h3>
+                        <p>Personalized recommendations</p>
+                    </div>
+                    <div class="card-accent"></div>
+                </div>
+                
+                <div class="concierge-message">
+                    <p class="message-text">
+AI Traffic Intelligence analyzed 50,000 real-time data points and predicts optimal departure at 3:30 PM. My neural traffic model suggests the C1 route will save you 12 minutes and improve fuel efficiency by 8% today.
+                    </p>
+                </div>
+                
+                <div class="premium-actions">
+                    <div class="action-tile" onclick="startNavigation()">
+                        <i class="fas fa-route"></i>
+                        <div class="action-title">Navigate</div>
+                        <div class="action-subtitle">Premium route guidance</div>
+                    </div>
+                    <div class="action-tile" onclick="openAriaChat()">
+                        <i class="fas fa-comments"></i>
+                        <div class="action-title">Chat with ARIA</div>
+                        <div class="action-subtitle">AI assistant</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Premium Services -->
+            <div class="luxury-card">
+                <div class="card-header">
+                    <div class="card-info">
+                        <h3>Premium Services</h3>
+                        <p>Exclusive member benefits</p>
+                    </div>
+                    <div class="card-accent"></div>
+                </div>
+                
+                <div class="premium-actions">
+                    <div class="action-tile" onclick="showAIVoiceAssistant()">
+                        <i class="fas fa-microphone-alt"></i>
+                        <div class="action-title">AI Voice Assistant</div>
+                        <div class="action-subtitle">Natural conversation</div>
+                    </div>
+                    <div class="action-tile" onclick="showNeuralCoach()">
+                        <i class="fas fa-brain"></i>
+                        <div class="action-title">Neural Drive Coach</div>
+                        <div class="action-subtitle">Real-time AI feedback</div>
+                    </div>
+                    <div class="action-tile" onclick="showAIMemories()">
+                        <i class="fas fa-camera-retro"></i>
+                        <div class="action-title">AI Trip Memories</div>
+                        <div class="action-subtitle">Smart photo curation</div>
+                    </div>
+                    <div class="action-tile" onclick="showAIConciergeShop()">
+                        <i class="fas fa-robot"></i>
+                        <div class="action-title">AI Concierge Shop</div>
+                        <div class="action-subtitle">Predictive recommendations</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Digital Key Screen -->
+        <main class="content screen" id="digitalKeyScreen">
+            <div class="screen-header">
+                <button class="back-btn" onclick="showHome()">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <h2>Digital Key</h2>
+            </div>
+
+            <div class="luxury-card key-card">
+                <div class="digital-key-visual">
+                    <div class="key-animation">
+                        <div class="key-outer-ring"></div>
+                        <div class="key-inner-ring"></div>
+                        <div class="key-center">
+                            <i class="fas fa-unlock"></i>
+                        </div>
+                    </div>
+                    <p class="key-status">Vehicle Unlocked</p>
+                </div>
+
+                <div class="key-actions">
+                    <button class="key-btn lock-btn" onclick="toggleLock()">
+                        <i class="fas fa-lock"></i>
+                        <span>Lock</span>
+                    </button>
+                    <button class="key-btn unlock-btn active" onclick="toggleLock()">
+                        <i class="fas fa-unlock"></i>
+                        <span>Unlock</span>
+                    </button>
+                    <button class="key-btn engine-btn" onclick="startEngine()">
+                        <i class="fas fa-power-off"></i>
+                        <span>Start Engine</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="luxury-card">
+                <div class="card-header">
+                    <div class="card-info">
+                        <h3>Share Digital Key</h3>
+                        <p>Grant temporary access</p>
+                    </div>
+                </div>
+                
+                <div class="share-key-form">
+                    <input type="text" placeholder="Guest name" class="premium-input">
+                    <input type="email" placeholder="Email address" class="premium-input">
+                    <div class="time-restrictions">
+                        <select class="premium-select">
+                            <option>1 Hour</option>
+                            <option>1 Day</option>
+                            <option>1 Week</option>
+                            <option>Custom</option>
+                        </select>
+                    </div>
+                    <button class="btn-premium">Generate Guest Key</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- AI Hybrid Manager Screen -->
+        <main class="content screen" id="hybridScreen">
+            <div class="screen-header">
+                <button class="back-btn" onclick="showHome()">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <h2>AI Hybrid Manager</h2>
+            </div>
+
+            <div class="luxury-card">
+                <div class="charging-status">
+                    <div class="hybrid-visual">
+                        <div class="fuel-container">
+                            <div class="fuel-level" style="width: 78%;">
+                                <span class="fuel-percentage">78%</span>
+                            </div>
+                        </div>
+                        <div class="battery-container">
+                            <div class="battery-level" style="width: 85%;">
+                                <span class="battery-percentage">85%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="charging-info">
+                        <p class="info-label">Hybrid Range</p>
+                        <p class="info-value">650 km</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="luxury-card">
+                <div class="card-header">
+                    <div class="card-info">
+                        <h3>Neural Efficiency Optimizer</h3>
+                        <p>AI learns and adapts to your driving patterns</p>
+                    </div>
+                </div>
+                
+                <div class="schedule-list">
+                    <div class="schedule-item">
+                        <div class="schedule-time">
+                            <i class="fas fa-moon"></i>
+                            <span>Next Drive 8:00 AM</span>
+                        </div>
+                        <div class="schedule-details">
+                            <p>Eco mode recommended</p>
+                            <p class="savings">Save ¥340/week</p>
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="schedule-time">
+                            <i class="fas fa-sun"></i>
+                            <span>Highway Route 9:15 AM</span>
+                        </div>
+                        <div class="schedule-details">
+                            <p>Sport mode suggested</p>
+                            <p class="target">Efficiency: 26.2 km/L</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="btn-premium">AI Auto-Optimize</button>
+            </div>
+        </main>
+
+        <!-- Predictive Health Screen -->
+        <main class="content screen" id="healthScreen">
+            <div class="screen-header">
+                <button class="back-btn" onclick="showHome()">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <h2>Predictive Health Monitor</h2>
+            </div>
+
+            <div class="luxury-card">
+                <div class="health-score">
+                    <div class="score-circle">
+                        <svg viewBox="0 0 200 200">
+                            <circle cx="100" cy="100" r="90" fill="none" stroke="#333" stroke-width="10"/>
+                            <circle cx="100" cy="100" r="90" fill="none" stroke="#D4AF37" stroke-width="10" 
+                                    stroke-dasharray="565" stroke-dashoffset="56" class="health-progress"/>
+                        </svg>
+                        <div class="score-text">
+                            <span class="score-number">95</span>
+                            <span class="score-label">Health Score</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="luxury-card">
+                <div class="card-header">
+                    <div class="card-info">
+                        <h3>AI Predictive Diagnostics</h3>
+                        <p>Machine learning health monitoring</p>
+                    </div>
+                </div>
+                
+                <div class="component-list">
+                    <div class="component-item">
+                        <div class="component-info">
+                            <i class="fas fa-engine"></i>
+                            <span>Engine System</span>
+                        </div>
+                        <div class="component-status good">
+                            <span>Excellent</span>
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                    </div>
+                    <div class="component-item">
+                        <div class="component-info">
+                            <i class="fas fa-battery-three-quarters"></i>
+                            <span>Hybrid Battery</span>
+                        </div>
+                        <div class="component-status warning">
+                            <span>Attention</span>
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                    </div>
+                    <div class="component-item">
+                        <div class="component-info">
+                            <i class="fas fa-tire"></i>
+                            <span>Tire Condition</span>
+                        </div>
+                        <div class="component-status good">
+                            <span>Good</span>
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="prediction-alert">
+                    <i class="fas fa-info-circle"></i>
+                    <p>AI detected slight efficiency decline. Hybrid battery conditioning recommended in 2 months based on 10,000 data points.</p>
+                    <button class="btn-secondary">AI Service Booking</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- AR Manual Screen -->
+        <main class="content screen" id="arManualScreen">
+            <div class="screen-header">
+                <button class="back-btn" onclick="showHome()">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <h2>AI Voice Assistant</h2>
+            </div>
+
+            <div class="ar-viewer">
+                <div class="camera-feed">
+                    <div class="ar-overlay">
+                        <div class="ar-instructions">
+                            <i class="fas fa-microphone-alt"></i>
+                            <p>"Hey Helix, how do I check my hybrid battery?"</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="capture-btn">
+                    <i class="fas fa-circle"></i>
+                </button>
+            </div>
+
+            <div class="luxury-card">
+                <div class="card-header">
+                    <div class="card-info">
+                        <h3>AI Voice Commands</h3>
+                        <p>Natural language vehicle control</p>
+                    </div>
+                </div>
+                
+                <div class="guide-list">
+                    <div class="guide-item">
+                        <i class="fas fa-oil-can"></i>
+                        <span>"Check hybrid system"</span>
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                    <div class="guide-item">
+                        <i class="fas fa-lightbulb"></i>
+                        <span>"Optimize fuel efficiency"</span>
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                    <div class="guide-item">
+                        <i class="fas fa-tire-flat"></i>
+                        <span>"Plan eco-friendly route"</span>
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Drive Coach Screen -->
+        <main class="content screen" id="driveCoachScreen">
+            <div class="screen-header">
+                <button class="back-btn" onclick="showHome()">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <h2>Neural Drive Coach</h2>
+            </div>
+
+            <div class="luxury-card">
+                <div class="coaching-session">
+                    <div class="coach-avatar">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="coach-message">
+                        <p>"AI analysis shows your hybrid transitions improved 23% this week. Your engine-to-electric switches are now 40ms faster, saving 0.8L per 100km. Try coasting 50m earlier before stops to maximize regenerative braking."</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="luxury-card">
+                <div class="card-header">
+                    <div class="card-info">
+                        <h3>Performance Metrics</h3>
+                        <p>This week's analysis</p>
+                    </div>
+                </div>
+                
+                <div class="performance-grid">
+                    <div class="perf-metric">
+                        <div class="perf-icon eco">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="perf-data">
+                            <span class="perf-value">24.8</span>
+                            <span class="perf-unit">km/L</span>
+                            <span class="perf-trend up">+8%</span>
+                        </div>
+                    </div>
+                    <div class="perf-metric">
+                        <div class="perf-icon safety">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="perf-data">
+                            <span class="perf-value">96</span>
+                            <span class="perf-unit">Safety Score</span>
+                            <span class="perf-trend up">+5%</span>
+                        </div>
+                    </div>
+                    <div class="perf-metric">
+                        <div class="perf-icon smooth">
+                            <i class="fas fa-wave-square"></i>
+                        </div>
+                        <div class="perf-data">
+                            <span class="perf-value">88</span>
+                            <span class="perf-unit">Smoothness</span>
+                            <span class="perf-trend up">+12%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Trip Story Screen -->
+        <main class="content screen" id="tripStoryScreen">
+            <div class="screen-header">
+                <button class="back-btn" onclick="showHome()">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <h2>AI Trip Memories</h2>
+            </div>
+
+            <div class="luxury-card">
+                <div class="story-preview">
+                    <div class="video-thumbnail">
+                        <i class="fas fa-play-circle"></i>
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23333' width='400' height='300'/%3E%3C/svg%3E" alt="Trip preview">
+                    </div>
+                    <div class="story-info">
+                        <h4>AI Curated: Mt. Fuji Journey</h4>
+                        <p>June 15, 2025・245km・4h 30min・AI Score: 9.2/10</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="luxury-card">
+                <div class="card-header">
+                    <div class="card-info">
+                        <h3>AI Memory Engine</h3>
+                        <p>Smart photo/video curation with emotion detection</p>
+                    </div>
+                </div>
+                
+                <div class="story-options">
+                    <div class="option-item">
+                        <i class="fas fa-music"></i>
+                        <span>AI Music Selection</span>
+                        <select class="premium-select-inline">
+                            <option>AI Emotion-Match</option>
+                            <option>Neural Soundtrack</option>
+                            <option>Learning Algorithm</option>
+                        </select>
+                    </div>
+                    <div class="option-item">
+                        <i class="fas fa-film"></i>
+                        <span>AI Editing Style</span>
+                        <select class="premium-select-inline">
+                            <option>Neural Cinematic</option>
+                            <option>AI Documentary</option>
+                            <option>Smart Dynamic</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <button class="btn-premium">
+                    <i class="fas fa-magic"></i>
+                    AI Auto-Generate
+                </button>
+            </div>
+        </main>
+
+        <!-- Eco Wallet Screen -->
+        <main class="content screen" id="ecoWalletScreen">
+            <div class="screen-header">
+                <button class="back-btn" onclick="showHome()">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <h2>Eco Wallet</h2>
+            </div>
+
+            <div class="luxury-card">
+                <div class="wallet-balance">
+                    <div class="balance-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="balance-info">
+                        <p class="balance-label">Carbon Points Balance</p>
+                        <p class="balance-amount">12,450 <span>pts</span></p>
+                        <p class="balance-value">≈ ¥3,735</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="luxury-card">
+                <div class="card-header">
+                    <div class="card-info">
+                        <h3>Recent Rewards</h3>
+                        <p>Eco driving achievements</p>
+                    </div>
+                </div>
+                
+                <div class="reward-list">
+                    <div class="reward-item">
+                        <div class="reward-icon eco">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <div class="reward-info">
+                            <span class="reward-title">Efficient Commute</span>
+                            <span class="reward-date">Today</span>
+                        </div>
+                        <div class="reward-points">+250</div>
+                    </div>
+                    <div class="reward-item">
+                        <div class="reward-icon charging">
+                            <i class="fas fa-charging-station"></i>
+                        </div>
+                        <div class="reward-info">
+                            <span class="reward-title">Off-peak Charging</span>
+                            <span class="reward-date">Yesterday</span>
+                        </div>
+                        <div class="reward-points">+180</div>
+                    </div>
+                </div>
+                
+                <button class="btn-secondary">View NFT Collection</button>
+            </div>
+        </main>
+
+        <!-- Marketplace Screen -->
+        <main class="content screen" id="marketplaceScreen">
+            <div class="screen-header">
+                <button class="back-btn" onclick="showHome()">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <h2>AI Concierge Shop</h2>
+            </div>
+
+            <div class="luxury-card">
+                <div class="card-header">
+                    <div class="card-info">
+                        <h3>AI Predictive Services</h3>
+                        <p>Machine learning recommendations</p>
+                    </div>
+                </div>
+                
+                <div class="service-grid">
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-wrench"></i>
+                        </div>
+                        <h4>AI Predictive Maintenance</h4>
+                        <p class="service-desc">ML-driven care scheduling</p>
+                        <p class="service-price">¥45,000/year</p>
+                        <button class="btn-mini">AI Subscribe</button>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>AI Smart Warranty</h4>
+                        <p class="service-desc">Adaptive coverage based on usage patterns</p>
+                        <p class="service-price">¥28,000</p>
+                        <button class="btn-mini">AI Purchase</button>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-charging-station"></i>
+                        </div>
+                        <h4>AI Fuel Optimizer</h4>
+                        <p class="service-desc">Smart station recommendations</p>
+                        <p class="service-price">¥3,500/month</p>
+                        <button class="btn-mini">AI Subscribe</button>
+                    </div>
+                    <div class="service-item featured">
+                        <div class="featured-badge">LIMITED</div>
+                        <div class="service-icon">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                        <h4>AI Recommended Parts</h4>
+                        <p class="service-desc">Machine learning part suggestions</p>
+                        <p class="service-price">Smart Catalog</p>
+                        <button class="btn-mini gold">AI Browse</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Premium Profile Screen -->
+        <main class="content screen" id="profileScreen">
+            <div class="screen-header">
+                <button class="back-btn" onclick="showHome()">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <h2>Account Information</h2>
+            </div>
+
+            <!-- User Profile Card -->
+            <div class="luxury-card profile-card">
+                <div class="profile-header">
+                    <div class="profile-avatar">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle fill='%23D4AF37' cx='50' cy='50' r='50'/%3E%3Ctext x='50' y='60' text-anchor='middle' fill='%23000' font-size='40' font-weight='bold'%3ETH%3C/text%3E%3C/svg%3E" alt="Profile">
+                        <div class="status-indicator online"></div>
+                    </div>
+                    <div class="profile-info">
+                        <h3>Taro Helix</h3>
+                        <p class="member-tier">Diamond Elite Member</p>
+                        <p class="member-since">Member since 2019</p>
+                    </div>
+                    <div class="premium-badge-large">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                </div>
+                
+                <div class="profile-stats">
+                    <div class="stat-item">
+                        <div class="stat-value">47,250</div>
+                        <div class="stat-label">Total km Driven</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">23.4</div>
+                        <div class="stat-label">Avg Efficiency</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">98</div>
+                        <div class="stat-label">AI Safety Score</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Insights Card -->
+            <div class="luxury-card ai-insights-card">
+                <div class="card-header">
+                    <div class="card-info">
+                        <h3>AI Personal Insights</h3>
+                        <p>Machine learning analysis of your driving</p>
+                    </div>
+                    <div class="ai-brain-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                </div>
+                
+                <div class="insights-grid">
+                    <div class="insight-item">
+                        <div class="insight-icon eco">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="insight-content">
+                            <h4>Eco Champion</h4>
+                            <p>Your hybrid efficiency improved 15% this month. AI recommends maintaining current driving patterns.</p>
+                        </div>
+                    </div>
+                    <div class="insight-item">
+                        <div class="insight-icon time">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="insight-content">
+                            <h4>Perfect Timing</h4>
+                            <p>AI detected you consistently leave 8 minutes early. Your punctuality score: 96%</p>
+                        </div>
+                    </div>
+                    <div class="insight-item">
+                        <div class="insight-icon route">
+                            <i class="fas fa-route"></i>
+                        </div>
+                        <div class="insight-content">
+                            <h4>Route Optimizer</h4>
+                            <p>Neural routing saved you 2.3 hours and ¥1,240 in fuel costs this month.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Achievements Card -->
+            <div class="luxury-card achievements-card">
+                <div class="card-header">
+                    <div class="card-info">
+                        <h3>AI Achievements</h3>
+                        <p>Milestone rewards and recognition</p>
+                    </div>
+                </div>
+                
+                <div class="achievements-grid">
+                    <div class="achievement-item unlocked">
+                        <div class="achievement-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="achievement-info">
+                            <h4>Hybrid Master</h4>
+                            <p>25,000km with optimal efficiency</p>
+                        </div>
+                        <div class="achievement-date">Unlocked</div>
+                    </div>
+                    <div class="achievement-item unlocked">
+                        <div class="achievement-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="achievement-info">
+                            <h4>AI Collaborator</h4>
+                            <p>1 year of AI-assisted driving</p>
+                        </div>
+                        <div class="achievement-date">Unlocked</div>
+                    </div>
+                    <div class="achievement-item locked">
+                        <div class="achievement-icon">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                        <div class="achievement-info">
+                            <h4>Carbon Neutral</h4>
+                            <p>Offset 100% of emissions</p>
+                        </div>
+                        <div class="achievement-progress">75% Complete</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Preferences Card -->
+            <div class="luxury-card preferences-card">
+                <div class="card-header">
+                    <div class="card-info">
+                        <h3>AI Preferences</h3>
+                        <p>Customize your intelligent experience</p>
+                    </div>
+                </div>
+                
+                <div class="preference-list">
+                    <div class="preference-item">
+                        <div class="preference-info">
+                            <h4>Neural Learning Mode</h4>
+                            <p>Allow AI to learn from your driving patterns</p>
+                        </div>
+                        <div class="toggle-switch active">
+                            <div class="toggle-slider"></div>
+                        </div>
+                    </div>
+                    <div class="preference-item">
+                        <div class="preference-info">
+                            <h4>Predictive Maintenance</h4>
+                            <p>AI-powered maintenance scheduling</p>
+                        </div>
+                        <div class="toggle-switch active">
+                            <div class="toggle-slider"></div>
+                        </div>
+                    </div>
+                    <div class="preference-item">
+                        <div class="preference-info">
+                            <h4>Voice Assistant Auto-Response</h4>
+                            <p>ARIA responds without "Hey Helix" wake word</p>
+                        </div>
+                        <div class="toggle-switch">
+                            <div class="toggle-slider"></div>
+                        </div>
+                    </div>
+                    <div class="preference-item">
+                        <div class="preference-info">
+                            <h4>Emotion-Based Music</h4>
+                            <p>AI detects mood and adjusts playlist</p>
+                        </div>
+                        <div class="toggle-switch active">
+                            <div class="toggle-slider"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subscription Status -->
+            <div class="luxury-card subscription-card">
+                <div class="subscription-status">
+                    <div class="subscription-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <div class="subscription-info">
+                        <h3>Diamond Elite Status</h3>
+                        <p>Premium AI features and priority support</p>
+                        <div class="renewal-date">Renews: March 15, 2026</div>
+                    </div>
+                    <div class="subscription-value">
+                        <span class="value-saved">¥12,450</span>
+                        <span class="value-label">saved this year</span>
+                    </div>
+                </div>
+                
+                <div class="premium-features">
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Advanced AI Analytics</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Priority Neural Processing</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>24/7 AI Concierge Access</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Unlimited Cloud Storage</span>
+                    </div>
+                </div>
+                
+                <button class="btn-premium manage-subscription">
+                    <i class="fas fa-cog"></i>
+                    Manage Subscription
+                </button>
+            </div>
+        </main>
+
+        <!-- ARIA Chat Interface -->
+        <div class="aria-chat-overlay" id="ariaChatOverlay">
+            <div class="aria-chat-container">
+                <div class="aria-chat-header">
+                    <div class="aria-identity">
+                        <div class="aria-avatar">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="aria-info">
+                            <h3>ARIA</h3>
+                            <p>AI Concierge v3.0</p>
+                        </div>
+                    </div>
+                    <button class="close-chat" onclick="closeAriaChat()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <div class="aria-chat-body" id="chatBody">
+                    <div class="aria-message">
+                        <p>Good afternoon, Taro-san. I've analyzed your driving patterns and noticed you could improve hybrid efficiency by 12%. I've also detected 3 upcoming maintenance opportunities. How may I assist you today?</p>
+                    </div>
+                </div>
+                
+                <div class="aria-chat-input">
+                    <input type="text" placeholder="Ask ARIA anything..." id="chatInput">
+                    <button class="send-btn" onclick="sendMessage()">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                    <button class="voice-btn">
+                        <i class="fas fa-microphone"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Premium Navigation -->
+        <nav class="nav-premium">
+            <div class="nav-items">
+                <div class="nav-item-premium active" onclick="showHome()">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </div>
+                <div class="nav-item-premium" onclick="showMap()">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <span>Navigate</span>
+                </div>
+                <div class="nav-item-premium" onclick="openAriaChat()">
+                    <i class="fas fa-brain"></i>
+                    <span>ARIA</span>
+                </div>
+                <div class="nav-item-premium" onclick="showHealth()">
+                    <i class="fas fa-heartbeat"></i>
+                    <span>Health</span>
+                </div>
+                <div class="nav-item-premium" onclick="showProfile()">
+                    <i class="fas fa-user-circle"></i>
+                    <span>Account</span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Notification System -->
+        <div class="notification-container" id="notificationContainer"></div>
+    </div>
+
+    <style>
+        :root {
+            --platinum: #E5E4E2;
+            --deep-black: #0A0A0A;
+            --charcoal: #1C1C1C;
+            --gold-accent: #D4AF37;
+            --pearl-white: #F8F8FF;
+            --silver-mist: #C0C0C0;
+            --dark-silver: #696969;
+            --shadow-luxury: 0 8px 64px rgba(0, 0, 0, 0.25);
+            --shadow-soft: 0 4px 24px rgba(0, 0, 0, 0.15);
+            --shadow-inset: inset 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(165deg, var(--deep-black) 0%, var(--charcoal) 50%, #2A2A2A 100%);
+            color: var(--pearl-white);
+            overflow-x: hidden;
+        }
+
+        .app-container {
+            max-width: 414px;
+            margin: 0 auto;
+            min-height: 100vh;
+            background: linear-gradient(180deg, var(--deep-black) 0%, var(--charcoal) 100%);
+            position: relative;
+            border-left: 1px solid rgba(212, 175, 55, 0.2);
+            border-right: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        /* Luxury Background Pattern */
+        .app-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        /* Premium Header */
+        .header {
+            background: linear-gradient(135deg, var(--deep-black) 0%, var(--charcoal) 100%);
+            padding: 20px 40px 15px;
+            position: relative;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 40px;
+            right: 40px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold-accent), transparent);
+        }
+
+        .status-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .time {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            font-weight: 300;
+            color: var(--gold-accent);
+            letter-spacing: 2px;
+        }
+
+        .indicators {
+            display: flex;
+            gap: 16px;
+        }
+
+        .indicators i {
+            color: var(--silver-mist);
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .brand-mark {
+            display: flex;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .honda-emblem {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--gold-accent) 0%, #F4D03F 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 16px;
+            box-shadow: var(--shadow-soft);
+            position: relative;
+        }
+
+        .honda-emblem::before {
+            content: '';
+            position: absolute;
+            inset: 2px;
+            background: var(--deep-black);
+            border-radius: 10px;
+        }
+
+        .honda-emblem::after {
+            content: 'H';
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--gold-accent);
+            position: relative;
+            z-index: 1;
+        }
+
+        .brand-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 14px;
+            color: var(--silver-mist);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .greeting {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 300;
+            margin-bottom: 4px;
+            background: linear-gradient(135deg, var(--pearl-white) 0%, var(--silver-mist) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .user-details {
+            font-size: 16px;
+            color: var(--dark-silver);
+            font-weight: 300;
+        }
+
+        /* New App Header Styles */
+        .app-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .quick-stats {
+            display: flex;
+            gap: 20px;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+        }
+
+        .stat-item i {
+            color: var(--gold-accent);
+            font-size: 12px;
+        }
+
+        .stat-value {
+            color: var(--pearl-white);
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .stat-unit {
+            color: var(--dark-silver);
+            font-size: 12px;
+        }
+
+        .ai-status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(212, 175, 55, 0.1);
+            padding: 6px 16px;
+            border-radius: 20px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .ai-indicator {
+            position: relative;
+        }
+
+        .ai-indicator i {
+            color: var(--gold-accent);
+            font-size: 14px;
+        }
+
+        .ai-indicator i.pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.1); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        .ai-text {
+            color: var(--pearl-white);
+            font-size: 12px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Screen Management */
+        .content {
+            padding: 20px 40px;
+            position: relative;
+            z-index: 1;
+            display: none;
+            min-height: calc(100vh - 100px);
+            padding-bottom: 120px;
+        }
+
+        .content.active {
+            display: block;
+            animation: screenFadeIn 0.4s ease forwards;
+        }
+
+        @keyframes screenFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .screen-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 32px;
+            position: relative;
+        }
+
+        .back-btn {
+            background: none;
+            border: none;
+            color: var(--gold-accent);
+            font-size: 20px;
+            cursor: pointer;
+            padding: 8px;
+            margin-right: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            transform: translateX(-4px);
+        }
+
+        .screen-header h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--pearl-white);
+        }
+
+        /* Luxury Cards */
+        .luxury-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 20px;
+            padding: 32px;
+            margin-bottom: 32px;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .luxury-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-luxury);
+            border-color: rgba(212, 175, 55, 0.4);
+        }
+
+        .luxury-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold-accent), transparent);
+            opacity: 0.6;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 32px;
+        }
+
+        .card-info h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--pearl-white);
+            margin-bottom: 4px;
+        }
+
+        .card-info p {
+            font-size: 14px;
+            color: var(--dark-silver);
+            font-weight: 300;
+        }
+
+        .card-accent {
+            width: 8px;
+            height: 40px;
+            background: linear-gradient(180deg, var(--gold-accent) 0%, transparent 100%);
+            border-radius: 4px;
+        }
+
+        /* Vehicle Status Premium */
+        .vehicle-overview {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .status-metric {
+            text-align: center;
+            padding: 24px 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .status-metric:hover {
+            background: rgba(0, 0, 0, 0.5);
+            border-color: var(--gold-accent);
+            transform: translateY(-4px);
+        }
+
+        .metric-icon {
+            font-size: 24px;
+            color: var(--gold-accent);
+            margin-bottom: 12px;
+        }
+
+        .metric-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--pearl-white);
+            margin-bottom: 4px;
+        }
+
+        .metric-label {
+            font-size: 12px;
+            color: var(--dark-silver);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .performance-bar {
+            width: 100%;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            margin-top: 12px;
+            overflow: hidden;
+        }
+
+        .performance-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--gold-accent) 0%, #F4D03F 100%);
+            border-radius: 2px;
+            transition: width 2s ease;
+        }
+
+        /* Concierge Section */
+        .concierge-message {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 16px;
+            padding: 24px;
+            margin: 24px 0;
+            position: relative;
+        }
+
+        .concierge-message::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 48px;
+            color: var(--gold-accent);
+            opacity: 0.3;
+        }
+
+        .message-text {
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--pearl-white);
+            font-weight: 300;
+            font-style: italic;
+            margin-left: 20px;
+        }
+
+        /* Premium Actions */
+        .premium-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 32px;
+        }
+
+        .action-tile {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 28px 24px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .action-tile::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .action-tile:hover::before {
+            left: 100%;
+        }
+
+        .action-tile:hover {
+            transform: translateY(-4px);
+            border-color: var(--gold-accent);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .action-tile i {
+            font-size: 32px;
+            color: var(--gold-accent);
+            margin-bottom: 16px;
+        }
+
+        .action-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--pearl-white);
+            margin-bottom: 8px;
+        }
+
+        .action-subtitle {
+            font-size: 12px;
+            color: var(--dark-silver);
+            line-height: 1.4;
+        }
+
+        /* Premium Navigation */
+        .nav-premium {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 414px;
+            background: linear-gradient(180deg, var(--deep-black) 0%, rgba(10, 10, 10, 0.95) 100%);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 20px 0 36px;
+            z-index: 1000;
+        }
+
+        .nav-premium::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold-accent), transparent);
+        }
+
+        .nav-items {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .nav-item-premium {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 12px 16px;
+            border-radius: 12px;
+            position: relative;
+        }
+
+        .nav-item-premium.active {
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        .nav-item-premium.active::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 24px;
+            height: 2px;
+            background: var(--gold-accent);
+            border-radius: 1px;
+        }
+
+        .nav-item-premium i {
+            font-size: 20px;
+            margin-bottom: 6px;
+            color: var(--dark-silver);
+            transition: color 0.3s ease;
+        }
+
+        .nav-item-premium.active i {
+            color: var(--gold-accent);
+        }
+
+        .nav-item-premium span {
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--dark-silver);
+            transition: color 0.3s ease;
+        }
+
+        .nav-item-premium.active span {
+            color: var(--gold-accent);
+        }
+
+        /* Digital Key Screen Specific */
+        .key-card {
+            text-align: center;
+        }
+
+        .digital-key-visual {
+            margin: 40px 0;
+        }
+
+        .key-animation {
+            width: 160px;
+            height: 160px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .key-outer-ring {
+            position: absolute;
+            inset: 0;
+            border: 3px solid var(--gold-accent);
+            border-radius: 50%;
+            animation: keyRingPulse 2s ease-in-out infinite;
+        }
+
+        .key-inner-ring {
+            position: absolute;
+            inset: 20px;
+            border: 2px solid rgba(212, 175, 55, 0.5);
+            border-radius: 50%;
+            animation: keyRingPulse 2s ease-in-out infinite 0.5s;
+        }
+
+        .key-center {
+            position: absolute;
+            inset: 40px;
+            background: linear-gradient(135deg, var(--gold-accent), #F4D03F);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            color: var(--deep-black);
+        }
+
+        @keyframes keyRingPulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.7; }
+        }
+
+        .key-status {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            color: var(--gold-accent);
+            margin-top: 24px;
+        }
+
+        .key-actions {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .key-btn {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            padding: 16px 24px;
+            color: var(--pearl-white);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .key-btn i {
+            font-size: 24px;
+        }
+
+        .key-btn span {
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .key-btn:hover {
+            background: rgba(212, 175, 55, 0.2);
+            border-color: var(--gold-accent);
+            transform: translateY(-2px);
+        }
+
+        .key-btn.active {
+            background: linear-gradient(135deg, var(--gold-accent), #F4D03F);
+            color: var(--deep-black);
+            border-color: var(--gold-accent);
+        }
+
+        /* Forms and Inputs */
+        .premium-input {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 16px;
+            color: var(--pearl-white);
+            font-size: 16px;
+            margin-bottom: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .premium-input:focus {
+            outline: none;
+            border-color: var(--gold-accent);
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .premium-select {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 16px;
+            color: var(--pearl-white);
+            font-size: 16px;
+            margin-bottom: 16px;
+            cursor: pointer;
+        }
+
+        .premium-select option {
+            background: var(--charcoal);
+        }
+
+        .btn-premium {
+            background: linear-gradient(135deg, var(--gold-accent), #F4D03F);
+            color: var(--deep-black);
+            border: none;
+            border-radius: 12px;
+            padding: 16px 32px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 16px;
+        }
+
+        .btn-premium:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--gold-accent);
+            border: 1px solid var(--gold-accent);
+            border-radius: 12px;
+            padding: 12px 24px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(212, 175, 55, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Charging Screen Specific */
+        .charging-status {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .battery-visual {
+            margin-bottom: 32px;
+        }
+
+        .battery-container {
+            width: 200px;
+            height: 80px;
+            background: rgba(0, 0, 0, 0.4);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .battery-level {
+            height: 100%;
+            background: linear-gradient(90deg, var(--gold-accent), #F4D03F);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .battery-percentage {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            font-weight: 600;
+            color: var(--deep-black);
+        }
+
+        .charging-info {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .info-label {
+            font-size: 14px;
+            color: var(--dark-silver);
+            margin-bottom: 8px;
+        }
+
+        .info-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--pearl-white);
+        }
+
+        .schedule-list {
+            margin: 24px 0;
+        }
+
+        .schedule-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            margin-bottom: 16px;
+        }
+
+        .schedule-time {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .schedule-time i {
+            color: var(--gold-accent);
+            font-size: 20px;
+        }
+
+        .schedule-details p {
+            margin: 0;
+            text-align: right;
+        }
+
+        .savings {
+            color: #22c55e;
+            font-weight: 600;
+        }
+
+        /* Health Screen Specific */
+        .health-score {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .score-circle {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .score-circle svg {
+            transform: rotate(-90deg);
+        }
+
+        .health-progress {
+            stroke-dasharray: 565;
+            stroke-dashoffset: 56;
+            animation: healthProgress 2s ease-out;
+        }
+
+        @keyframes healthProgress {
+            from { stroke-dashoffset: 565; }
+            to { stroke-dashoffset: 56; }
+        }
+
+        .score-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .score-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 48px;
+            font-weight: 600;
+            color: var(--gold-accent);
+            display: block;
+        }
+
+        .score-label {
+            font-size: 14px;
+            color: var(--dark-silver);
+        }
+
+        .component-list {
+            margin: 24px 0;
+        }
+
+        .component-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            margin-bottom: 16px;
+        }
+
+        .component-info {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .component-info i {
+            color: var(--gold-accent);
+            font-size: 20px;
+        }
+
+        .component-status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .component-status.good {
+            color: #22c55e;
+        }
+
+        .component-status.warning {
+            color: #f59e0b;
+        }
+
+        .prediction-alert {
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 24px;
+        }
+
+        .prediction-alert i {
+            color: var(--gold-accent);
+            margin-bottom: 12px;
+            font-size: 24px;
+        }
+
+        .prediction-alert p {
+            margin: 12px 0;
+            line-height: 1.6;
+        }
+
+        /* AR Manual Screen */
+        .ar-viewer {
+            position: relative;
+            margin-bottom: 32px;
+        }
+
+        .camera-feed {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #333 0%, #1a1a1a 100%);
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .ar-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ar-instructions {
+            text-align: center;
+            color: var(--pearl-white);
+        }
+
+        .ar-instructions i {
+            font-size: 48px;
+            margin-bottom: 16px;
+            opacity: 0.7;
+        }
+
+        .capture-btn {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 70px;
+            background: rgba(212, 175, 55, 0.2);
+            border: 3px solid var(--gold-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .capture-btn:hover {
+            transform: translateX(-50%) scale(1.1);
+            background: rgba(212, 175, 55, 0.4);
+        }
+
+        .capture-btn i {
+            font-size: 24px;
+            color: var(--gold-accent);
+        }
+
+        .guide-list {
+            margin-top: 24px;
+        }
+
+        .guide-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            margin-bottom: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .guide-item:hover {
+            background: rgba(0, 0, 0, 0.5);
+            transform: translateX(8px);
+        }
+
+        .guide-item i:first-child {
+            color: var(--gold-accent);
+            font-size: 20px;
+        }
+
+        .guide-item i:last-child {
+            color: var(--dark-silver);
+            font-size: 24px;
+        }
+
+        /* Drive Coach Screen */
+        .coaching-session {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .coach-avatar {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--gold-accent), #F4D03F);
+            border-radius: 50%;
+            margin: 0 auto 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: coachPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes coachPulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.9; }
+        }
+
+        .coach-avatar i {
+            font-size: 36px;
+            color: var(--deep-black);
+        }
+
+        .coach-message {
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        .coach-message p {
+            font-style: italic;
+            line-height: 1.6;
+            color: var(--pearl-white);
+        }
+
+        .performance-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 24px;
+        }
+
+        .perf-metric {
+            text-align: center;
+        }
+
+        .perf-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin: 0 auto 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .perf-icon.eco {
+            background: rgba(34, 197, 94, 0.2);
+            color: #22c55e;
+        }
+
+        .perf-icon.safety {
+            background: rgba(212, 175, 55, 0.2);
+            color: var(--gold-accent);
+        }
+
+        .perf-icon.smooth {
+            background: rgba(59, 130, 246, 0.2);
+            color: #3b82f6;
+        }
+
+        .perf-data {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .perf-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            font-weight: 600;
+            color: var(--pearl-white);
+        }
+
+        .perf-unit {
+            font-size: 12px;
+            color: var(--dark-silver);
+        }
+
+        .perf-trend {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .perf-trend.up {
+            color: #22c55e;
+        }
+
+        /* Trip Story Screen */
+        .story-preview {
+            margin-bottom: 32px;
+        }
+
+        .video-thumbnail {
+            width: 100%;
+            height: 200px;
+            background: #333;
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .video-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-thumbnail i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 48px;
+            color: var(--gold-accent);
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+
+        .video-thumbnail:hover i {
+            transform: translate(-50%, -50%) scale(1.2);
+            opacity: 1;
+        }
+
+        .story-info {
+            margin-top: 16px;
+        }
+
+        .story-info h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            color: var(--pearl-white);
+            margin-bottom: 4px;
+        }
+
+        .story-info p {
+            font-size: 14px;
+            color: var(--dark-silver);
+        }
+
+        .story-options {
+            margin: 24px 0;
+        }
+
+        .option-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .option-item i {
+            color: var(--gold-accent);
+            font-size: 20px;
+            margin-right: 16px;
+        }
+
+        .premium-select-inline {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 8px 16px;
+            color: var(--pearl-white);
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        /* Eco Wallet Screen */
+        .wallet-balance {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            padding: 40px 0;
+        }
+
+        .balance-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            color: white;
+        }
+
+        .balance-info {
+            flex: 1;
+        }
+
+        .balance-label {
+            font-size: 14px;
+            color: var(--dark-silver);
+            margin-bottom: 8px;
+        }
+
+        .balance-amount {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36px;
+            font-weight: 600;
+            color: var(--pearl-white);
+            margin-bottom: 4px;
+        }
+
+        .balance-amount span {
+            font-size: 20px;
+            color: var(--dark-silver);
+        }
+
+        .balance-value {
+            font-size: 16px;
+            color: var(--gold-accent);
+        }
+
+        .reward-list {
+            margin: 24px 0;
+        }
+
+        .reward-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            margin-bottom: 16px;
+        }
+
+        .reward-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .reward-icon.eco {
+            background: rgba(34, 197, 94, 0.2);
+            color: #22c55e;
+        }
+
+        .reward-icon.charging {
+            background: rgba(59, 130, 246, 0.2);
+            color: #3b82f6;
+        }
+
+        .reward-info {
+            flex: 1;
+            margin: 0 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .reward-title {
+            font-weight: 600;
+            color: var(--pearl-white);
+        }
+
+        .reward-date {
+            font-size: 12px;
+            color: var(--dark-silver);
+        }
+
+        .reward-points {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: #22c55e;
+        }
+
+        /* Marketplace Screen */
+        .service-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 24px;
+        }
+
+        .service-item {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 24px 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .service-item:hover {
+            transform: translateY(-4px);
+            border-color: var(--gold-accent);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .service-item.featured {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(212, 175, 55, 0.05));
+            border-color: var(--gold-accent);
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: var(--gold-accent);
+            color: var(--deep-black);
+            font-size: 10px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 50%;
+            margin: 0 auto 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--gold-accent);
+        }
+
+        .service-item h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--pearl-white);
+            margin-bottom: 8px;
+        }
+
+        .service-desc {
+            font-size: 12px;
+            color: var(--dark-silver);
+            margin-bottom: 12px;
+        }
+
+        .service-price {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--gold-accent);
+            margin-bottom: 16px;
+        }
+
+        .btn-mini {
+            background: transparent;
+            border: 1px solid var(--gold-accent);
+            color: var(--gold-accent);
+            border-radius: 8px;
+            padding: 8px 20px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-mini:hover {
+            background: var(--gold-accent);
+            color: var(--deep-black);
+        }
+
+        .btn-mini.gold {
+            background: var(--gold-accent);
+            color: var(--deep-black);
+        }
+
+        /* ARIA Chat Overlay */
+        .aria-chat-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            backdrop-filter: blur(10px);
+        }
+
+        .aria-chat-overlay.active {
+            display: flex;
+            animation: overlayFadeIn 0.3s ease;
+        }
+
+        @keyframes overlayFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .aria-chat-container {
+            width: 90%;
+            max-width: 380px;
+            height: 80%;
+            max-height: 600px;
+            background: linear-gradient(180deg, var(--deep-black) 0%, var(--charcoal) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 24px;
+            display: flex;
+            flex-direction: column;
+            animation: chatSlideUp 0.4s ease;
+        }
+
+        @keyframes chatSlideUp {
+            from { transform: translateY(100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .aria-chat-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .aria-identity {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .aria-avatar {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--gold-accent), #F4D03F);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: ariaPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes ariaPulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
+            50% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(212, 175, 55, 0); }
+        }
+
+        .aria-avatar i {
+            font-size: 24px;
+            color: var(--deep-black);
+        }
+
+        .aria-info h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            color: var(--pearl-white);
+            margin-bottom: 2px;
+        }
+
+        .aria-info p {
+            font-size: 12px;
+            color: var(--dark-silver);
+        }
+
+        .close-chat {
+            background: none;
+            border: none;
+            color: var(--dark-silver);
+            font-size: 24px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .close-chat:hover {
+            color: var(--pearl-white);
+            transform: rotate(90deg);
+        }
+
+        .aria-chat-body {
+            flex: 1;
+            padding: 24px;
+            overflow-y: auto;
+        }
+
+        .aria-message {
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 16px 16px 16px 4px;
+            padding: 16px 20px;
+            margin-bottom: 16px;
+            max-width: 80%;
+        }
+
+        .aria-message p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--pearl-white);
+        }
+
+        .user-message {
+            background: linear-gradient(135deg, var(--gold-accent), #F4D03F);
+            border-radius: 16px 16px 4px 16px;
+            padding: 16px 20px;
+            margin-bottom: 16px;
+            max-width: 80%;
+            margin-left: auto;
+        }
+
+        .user-message p {
+            color: var(--deep-black);
+            font-weight: 500;
+        }
+
+        .aria-chat-input {
+            display: flex;
+            gap: 12px;
+            padding: 20px;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .aria-chat-input input {
+            flex: 1;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 24px;
+            padding: 12px 20px;
+            color: var(--pearl-white);
+            font-size: 15px;
+        }
+
+        .aria-chat-input input:focus {
+            outline: none;
+            border-color: var(--gold-accent);
+        }
+
+        .send-btn, .voice-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .send-btn {
+            background: var(--gold-accent);
+            color: var(--deep-black);
+        }
+
+        .send-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .voice-btn {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--pearl-white);
+        }
+
+        .voice-btn:hover {
+            border-color: var(--gold-accent);
+            color: var(--gold-accent);
+        }
+
+        /* Notification System */
+        .notification-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 3000;
+        }
+
+        .notification {
+            background: linear-gradient(135deg, var(--deep-black), var(--charcoal));
+            border: 1px solid var(--gold-accent);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-bottom: 12px;
+            min-width: 280px;
+            box-shadow: var(--shadow-luxury);
+            animation: notificationSlide 0.4s ease;
+        }
+
+        @keyframes notificationSlide {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        .notification-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+
+        .notification-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--gold-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--deep-black);
+        }
+
+        .notification-title {
+            font-weight: 600;
+            color: var(--pearl-white);
+        }
+
+        .notification-message {
+            font-size: 14px;
+            color: var(--dark-silver);
+            line-height: 1.4;
+        }
+
+        /* Animations */
+        @keyframes luxuryFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(40px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .luxury-card {
+            animation: luxuryFadeIn 0.8s ease forwards;
+        }
+
+        .luxury-card:nth-child(1) { animation-delay: 0.1s; }
+        .luxury-card:nth-child(2) { animation-delay: 0.3s; }
+        .luxury-card:nth-child(3) { animation-delay: 0.5s; }
+
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        .honda-emblem {
+            background-size: 200% 100%;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        /* Responsive */
+        @media (max-width: 380px) {
+            .app-container {
+                max-width: 100%;
+            }
+            
+            .header {
+                padding: 15px 20px 10px;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .luxury-card {
+                padding: 24px;
+            }
+            
+            .premium-actions {
+                grid-template-columns: 1fr;
+            }
+            
+            .vehicle-overview {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <script>
+        // Initialize the app
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize vehicle stats updates
+            updateVehicleStats();
+            setInterval(updateVehicleStats, 30000); // Update every 30 seconds
+        });
+
+        // Update vehicle statistics in header
+        function updateVehicleStats() {
+            // Simulate real-time data updates
+            const stats = {
+                fuelEfficiency: (23.5 + Math.random() * 2).toFixed(1),
+                range: Math.floor(630 + Math.random() * 40),
+                battery: Math.floor(80 + Math.random() * 10)
+            };
+
+            // Update header stats
+            const statElements = document.querySelectorAll('.stat-value');
+            if (statElements[0]) statElements[0].textContent = stats.fuelEfficiency;
+            if (statElements[1]) statElements[1].textContent = stats.range;
+            if (statElements[2]) statElements[2].textContent = stats.battery;
+
+            // Update AI status based on activity
+            const aiText = document.querySelector('.ai-text');
+            const aiStates = ['AI Active', 'AI Learning', 'AI Optimizing'];
+            if (aiText && Math.random() > 0.7) {
+                aiText.textContent = aiStates[Math.floor(Math.random() * aiStates.length)];
+            }
+        }
+
+        // Update current time
+        function updateTime() {
+            const now = new Date();
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+            const displayHours = hours % 12 || 12;
+            const timeString = `${displayHours}:${minutes.toString().padStart(2, '0')} ${ampm}`;
+            document.getElementById('currentTime').textContent = timeString;
+        }
+
+        // Update greeting based on time of day
+        function updateGreeting() {
+            const hour = new Date().getHours();
+            const greetingEl = document.getElementById('greeting');
+            
+            if (hour < 12) {
+                greetingEl.textContent = 'Good Morning';
+            } else if (hour < 18) {
+                greetingEl.textContent = 'Good Afternoon';
+            } else {
+                greetingEl.textContent = 'Good Evening';
+            }
+        }
+
+        // Screen navigation
+        function showScreen(screenId) {
+            // Hide all screens
+            document.querySelectorAll('.screen').forEach(screen => {
+                screen.classList.remove('active');
+            });
+            
+            // Show selected screen
+            const selectedScreen = document.getElementById(screenId);
+            if (selectedScreen) {
+                selectedScreen.classList.add('active');
+            }
+            
+            // Update navigation
+            updateNavigation(screenId);
+        }
+
+        function updateNavigation(screenId) {
+            // Remove active class from all nav items
+            document.querySelectorAll('.nav-item-premium').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Add active class to corresponding nav item
+            const navMap = {
+                'homeScreen': 0,
+                'mapScreen': 1,
+                'ariaChatOverlay': 2,
+                'healthScreen': 3,
+                'profileScreen': 4
+            };
+            
+            if (navMap[screenId] !== undefined) {
+                document.querySelectorAll('.nav-item-premium')[navMap[screenId]].classList.add('active');
+            }
+        }
+
+        // Navigation functions
+        function showHome() {
+            showScreen('homeScreen');
+        }
+
+        function showMap() {
+            showNotification('Navigation', 'Map feature coming soon');
+        }
+
+        function showHealth() {
+            showScreen('healthScreen');
+        }
+
+        function showProfile() {
+            showScreen('profileScreen');
+        }
+
+        // Feature screens
+        function showDigitalKey() {
+            showScreen('digitalKeyScreen');
+        }
+
+        function showHybridManager() {
+            showScreen('hybridScreen');
+        }
+
+        function showPredictiveHealth() {
+            showScreen('healthScreen');
+        }
+
+        function showAIVoiceAssistant() {
+            showScreen('aiVoiceScreen');
+        }
+
+        function showNeuralCoach() {
+            showScreen('neuralCoachScreen');
+        }
+
+        function showAIMemories() {
+            showScreen('aiMemoriesScreen');
+        }
+
+        function showAIConciergeShop() {
+            showScreen('aiShopScreen');
+        }
+
+        // Digital Key functions
+        function toggleLock() {
+            const lockBtns = document.querySelectorAll('.key-btn');
+            lockBtns.forEach(btn => btn.classList.toggle('active'));
+            
+            const keyStatus = document.querySelector('.key-status');
+            const keyIcon = document.querySelector('.key-center i');
+            
+            if (keyIcon.classList.contains('fa-unlock')) {
+                keyIcon.className = 'fas fa-lock';
+                keyStatus.textContent = 'Vehicle Locked';
+                showNotification('Security', 'Vehicle has been locked');
+            } else {
+                keyIcon.className = 'fas fa-unlock';
+                keyStatus.textContent = 'Vehicle Unlocked';
+                showNotification('Security', 'Vehicle has been unlocked');
+            }
+        }
+
+        function startEngine() {
+            showNotification('Engine', 'Remote engine start initiated');
+        }
+
+        function startNavigation() {
+            showNotification('Navigation', 'Premium route calculation in progress...');
+            setTimeout(() => {
+                showNotification('Navigation', 'Route ready. Starting navigation.');
+            }, 2000);
+        }
+
+        // ARIA Chat functions
+        function openAriaChat() {
+            document.getElementById('ariaChatOverlay').classList.add('active');
+        }
+
+        function closeAriaChat() {
+            document.getElementById('ariaChatOverlay').classList.remove('active');
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const message = input.value.trim();
+            
+            if (message) {
+                // Add user message
+                const chatBody = document.getElementById('chatBody');
+                const userMsg = document.createElement('div');
+                userMsg.className = 'user-message';
+                userMsg.innerHTML = `<p>${message}</p>`;
+                chatBody.appendChild(userMsg);
+                
+                // Clear input
+                input.value = '';
+                
+                // Simulate ARIA response
+                setTimeout(() => {
+                    const ariaMsg = document.createElement('div');
+                    ariaMsg.className = 'aria-message';
+                    ariaMsg.innerHTML = `<p>I understand your request about "${message}". Let me help you with that...</p>`;
+                    chatBody.appendChild(ariaMsg);
+                    
+                    // Scroll to bottom
+                    chatBody.scrollTop = chatBody.scrollHeight;
+                }, 1000);
+            }
+        }
+
+        // Notification system
+        function showNotification(title, message) {
+            const container = document.getElementById('notificationContainer');
+            
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.innerHTML = `
+                <div class="notification-header">
+                    <div class="notification-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <div class="notification-title">${title}</div>
+                </div>
+                <div class="notification-message">${message}</div>
+            `;
+            
+            container.appendChild(notification);
+            
+            // Auto remove after 5 seconds
+            setTimeout(() => {
+                notification.style.animation = 'notificationSlide 0.4s ease reverse';
+                setTimeout(() => notification.remove(), 400);
+            }, 5000);
+        }
+
+        // Handle Enter key in chat
+        document.getElementById('chatInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    </script>
+</body>
+</html>
